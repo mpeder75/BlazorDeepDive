@@ -1,0 +1,13 @@
+﻿
+<div data-name="server.Name" style="color:@(server.IsOnline ? "green" : "red")">
+
+    @server.Name is in @server.City and is @(server.IsOnline ? "online" : "offline")
+</div>
+
+@code {
+
+    private Server server = new Server
+    {
+        Name = "Server1", City = "Toronto"
+    };
+}
