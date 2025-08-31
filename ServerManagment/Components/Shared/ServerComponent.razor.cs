@@ -1,26 +1,16 @@
-﻿using Microsoft.AspNetCore.Components;
-using ServerManagment.Models;
+﻿using ServerManagment.Models;
 
 namespace ServerManagment.Components.Shared;
 
 public partial class ServerComponent
 {
-    [SupplyParameterFromForm] private Server? server { get; set; }
+    private Server? server { get; set; } = new Server { Name = "Server", City = "Toronto" };
 
-    protected override void OnParametersSet()
-    {
-        server ??= new Server
-        {
-            Name = "Server 1",
-            City = "Toronto"
-        };
-    }
-
-    private void ChangeServerStatus()
+    private void ChangeStatus()
     {
         if (server != null)
         {
-            server.IsOnline = !server.IsOnline;
+            this.server.IsOnline = !this.server.IsOnline;
         }
     }
 }

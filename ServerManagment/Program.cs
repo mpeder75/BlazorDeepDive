@@ -16,10 +16,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-// ------- Middleware -------- //
 app.UseHttpsRedirection();
 
-// ansvarlig for statiske roesource filer som CSS, JS, billeder osv. 
 app.UseStaticFiles();
 app.UseAntiforgery();
 

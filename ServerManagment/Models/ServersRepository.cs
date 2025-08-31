@@ -2,7 +2,6 @@
 
 public static class ServersRepository
 {
-    // hardcoder servers med data
     private static List<Server> servers = new List<Server>()
     {
         new Server { ServerId = 1, Name = "Server1", City = "Toronto" },
