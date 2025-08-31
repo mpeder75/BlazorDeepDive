@@ -3,7 +3,7 @@
 public static class ServersRepository
 {
     // hardcoder servers med data
-    private static readonly List<Server> servers = new()
+    private static List<Server> servers = new List<Server>()
     {
         new Server { ServerId = 1, Name = "Server1", City = "Toronto" },
         new Server { ServerId = 2, Name = "Server2", City = "Toronto" },
@@ -17,7 +17,9 @@ public static class ServersRepository
         new Server { ServerId = 10, Name = "Server10", City = "Calgary" },
         new Server { ServerId = 11, Name = "Server11", City = "Calgary" },
         new Server { ServerId = 12, Name = "Server12", City = "Halifax" },
-        new Server { ServerId = 13, Name = "Server13", City = "Halifax" }
+        new Server { ServerId = 12, Name = "Server13", City = "Halifax" },
+        new Server { ServerId = 12, Name = "Server14", City = "Halifax" },
+        new Server { ServerId = 13, Name = "Server15", City = "Halifax" }
     };
 
     public static void AddServer(Server server)
@@ -27,7 +29,7 @@ public static class ServersRepository
         servers.Add(server);
     }
 
-    public static List<Server> GetServres()
+    public static List<Server> GetServers()
     {
         return servers;
     }

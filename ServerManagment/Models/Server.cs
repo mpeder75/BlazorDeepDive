@@ -1,14 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ServerManagment.Models;
+﻿namespace ServerManagment.Models;
 
 public class Server
 {
     public int ServerId { get; set; }
     public bool IsOnline { get; set; }
-    [Required]
     public string? Name { get; set; }
-    [Required]
     public string? City { get; set; }
 
     public Server()

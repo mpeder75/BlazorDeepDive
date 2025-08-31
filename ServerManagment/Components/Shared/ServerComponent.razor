@@ -1,0 +1,17 @@
+﻿@if (server != null)
+{
+    <EditForm Enhanced="true" Model="server" FormName="serverComponentform" OnSubmit="ChangeServerStatus">
+        
+        <InputNumber @bind-Value="server.ServerId" hidden></InputNumber>
+        <InputText @bind-Value="server.Name" hidden></InputText>
+        <InputText @bind-Value="server.City" hidden></InputText>
+        <InputCheckbox @bind-Value="server.IsOnline" hidden></InputCheckbox>
+
+        <div data-name="@server.Name" data-status="Server is  @(server.IsOnline ? "Online" : "Offline")"
+             style="@($"color:{(server.IsOnline ? "green" : "red")}")">
+            @server.Name is in @server.City is @(server.IsOnline ? "Online" : "Offline")
+            <button type="submit" class="btn btn-primary">Turn On/Off</button>
+        </div>
+
+    </EditForm>
+}
