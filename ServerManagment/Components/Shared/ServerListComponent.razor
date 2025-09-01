@@ -1,0 +1,10 @@
+﻿@inject NavigationManager NavigationManager
+
+@if (servers != null && this.servers.Count > 0)
+{
+    <ul>
+        <Virtualize Items="servers" Context="server">
+            <ServerComponent Server="server"></ServerComponent>
+        </Virtualize>
+    </ul>
+}

@@ -1,16 +1,19 @@
-﻿using ServerManagment.Models;
+﻿using Microsoft.AspNetCore.Components;
+using ServerManagment.Models;
 
 namespace ServerManagment.Components.Shared;
 
 public partial class ServerComponent
 {
-    private Server? server { get; set; } = new Server { Name = "Server", City = "Toronto" };
+    [Parameter]
+    public Server? Server { get; set; } 
 
-    private void ChangeStatus()
+    private void DeleteServer(int serverId)
     {
-        if (server != null)
+        if (serverId > 0)
         {
-            this.server.IsOnline = !this.server.IsOnline;
+            ServersRepository.DeleteServer(serverId);
+            NavigationManager.NavigateTo("/servers", true);
         }
     }
 }
