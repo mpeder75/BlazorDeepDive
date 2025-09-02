@@ -17,4 +17,9 @@ public partial class CityListComponent
 
         SelectCityCallback.InvokeAsync(cityName);
     }
+
+    public void ClearSelection()
+    {
+        this.selectedCity = string.Empty;
+    }
 }

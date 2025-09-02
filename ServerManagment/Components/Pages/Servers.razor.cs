@@ -1,4 +1,5 @@
-﻿using ServerManagment.Models;
+﻿using ServerManagment.Components.Shared;
+using ServerManagment.Models;
 
 namespace ServerManagment.Components.Pages;
 
@@ -6,24 +7,22 @@ public partial class Servers
 {
     private string selectedCity = "Toronto";
 
-    private string _serverFilter = "";
+    private string searchFilter = "";
 
-    private string serverFilter
-    {
-        get => _serverFilter;
-        set
-        {
-            _serverFilter = value;
-        }
-    }
-
-    private void HandleSearch()
-    {
-        //selectedCity = string.Empty;
-    }
+    private CityListComponent? cityListComponent;
+    private SearchBarComponent? searchBarComponent;
 
     private void HandleCitySelection(string cityName)
     {
         selectedCity = cityName;
+        this.searchFilter = string.Empty;
+        searchBarComponent?.ClearFilter();
+    }
+
+    private void HandleSearchServer(string searchFilter)
+    {
+        this.searchFilter = searchFilter;
+
+        cityListComponent?.ClearSelection();
     }
 }

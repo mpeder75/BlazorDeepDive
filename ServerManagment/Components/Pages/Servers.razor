@@ -6,18 +6,13 @@
 <br/>
 <br/>
 
-<CityListComponent SelectCityCallback="HandleCitySelection"></CityListComponent>
+<CityListComponent @ref="cityListComponent" SelectCityCallback="HandleCitySelection"></CityListComponent>
 
 <br/>
-
-<div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Search Servers" @bind-value="serverFilter" @bind-value:event="oninput"/>
-    <button class="btn btn-outline-secondary" type="button" id="button-search" @onclick="HandleSearch">Search</button>
-</div>
-
+<SearchBarComponent @ref="searchBarComponent" SearchServerCallback="HandleSearchServer"></SearchBarComponent>
 <br/>
 
-<ServerListComponent @rendermode="InteractiveServer" CityName="@this.selectedCity"></ServerListComponent>
+<ServerListComponent @rendermode="InteractiveServer" CityName="@this.selectedCity" SearchFilter="@searchFilter"></ServerListComponent>
 
 <p>
     <a href="/servers/add" class="btn btn-primary">Add Server</a>

@@ -3,29 +3,24 @@ using ServerManagment.Models;
 
 namespace ServerManagment.Components.Shared;
 
-/// <summary>
-///     Viser en liste af servere for en valgt by.
-///     By-navnet modtages som parameter fra parent-komponenten.
-/// </summary>
 public partial class ServerListComponent
 {
-    // Indeholder listen af servere for den valgte by.
+    [Parameter] public string SearchFilter { get; set; }
+
+    [Parameter] public string? CityName { get; set; } = ""; 
+
     private List<Server>? servers;
 
-    /// <summary>
-    ///     Navnet på den by, som listen skal vise servere for.
-    ///     Sættes af parent-komponenten via parameter-binding.
-    /// </summary>
-    [Parameter]
-    public string? CityName { get; set; }
-
-    /// <summary>
-    ///     Kaldes automatisk af Blazor, når parameteren CityName ændres.
-    ///     Henter servere for den nye by fra repository.
-    /// </summary>
     protected override void OnParametersSet()
     {
-        servers = ServersRepository.GetServersByCity(CityName??"Toronto");
+        if (string.IsNullOrWhiteSpace(this.SearchFilter))
+        {
+            servers = ServersRepository.GetServersByCity(CityName ?? "Toronto");
+        }
+        else
+        {
+            servers = ServersRepository.SearchServers(SearchFilter);
+
+        }
     }
-   
 }
