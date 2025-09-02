@@ -6,9 +6,7 @@ namespace ServerManagment.Components.Pages;
 public partial class Servers
 {
     private string selectedCity = "Toronto";
-
     private string searchFilter = "";
-
     private CityListComponent? cityListComponent;
     private SearchBarComponent? searchBarComponent;
 

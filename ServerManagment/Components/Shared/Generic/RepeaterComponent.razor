@@ -1,0 +1,10 @@
+﻿@typeparam TItem
+
+@Header
+@if (Items != null && Items.Count > 0 && Row != null)
+{
+    <Virtualize Items="this.Items" Context="item">
+        @Row(item)
+    </Virtualize>
+}
+@Footer

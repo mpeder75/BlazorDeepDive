@@ -45,3 +45,7 @@ C:\Users\mpede\source\repos\mpeder75\BlazorDeepDive\ServerManagment\obj\Debug\ne
 C:\Users\mpede\source\repos\mpeder75\BlazorDeepDive\ServerManagment\obj\Debug\net8.0\ServerManagment.pdb
 C:\Users\mpede\source\repos\mpeder75\BlazorDeepDive\ServerManagment\obj\Debug\net8.0\ServerManagment.genruntimeconfig.cache
 C:\Users\mpede\source\repos\mpeder75\BlazorDeepDive\ServerManagment\obj\Debug\net8.0\ref\ServerManagment.dll
+C:\Users\mpede\source\repos\mpeder75\BlazorDeepDive\ServerManagment\obj\Debug\net8.0\scopedcss\Components\Pages\EditServer.razor.rz.scp.css
+C:\Users\mpede\source\repos\mpeder75\BlazorDeepDive\ServerManagment\obj\Debug\net8.0\scopedcss\Components\Shared\SearchBarComponent.razor.rz.scp.css
+C:\Users\mpede\source\repos\mpeder75\BlazorDeepDive\ServerManagment\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.dll
+C:\Users\mpede\source\repos\mpeder75\BlazorDeepDive\ServerManagment\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
