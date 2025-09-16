@@ -4,15 +4,14 @@ namespace ToDoApp.Components.Pages;
 
 public partial class ToDoList
 {
-    // loade data fra repo
-    private List<ToDoItem> items = ToDoItemRepository.GetItems();
+    private List<ToDoItem> items = ToDoItemRepository.GetItems();           // loade data fra repo
+
 
     private void AddTask()
     {
-        // her tilføjes ny item til listen
-        ToDoItemRepository.AddItem(new ToDoItem { Name = "New Task" });
+        ToDoItemRepository.AddItem(new ToDoItem { Name = "New Task" });     // her tilføjes ny item til listen
+        
+        items = ToDoItemRepository.GetItems();                              // bruges til at reloade listen igen
 
-        // bruges til at reloade listen igen
-        items = ToDoItemRepository.GetItems();
     }
 }
